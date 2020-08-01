@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.ShowGroupChooseTableController">
+   <children>
+      <Button layoutX="54.0" layoutY="341.0" mnemonicParsing="false" onAction="#toMainRiz" prefHeight="34.0" prefWidth="185.0" text="В главное меню" />
+      <Button layoutX="402.0" layoutY="341.0" mnemonicParsing="false" onAction="#toShowGroupComplete" prefHeight="34.0" prefWidth="144.0" text="Подтвердить" />
+      <Label fx:id="label" layoutX="201.0" layoutY="37.0" prefHeight="34.0" prefWidth="256.0" text="Выберите таблицу" />
+      <VBox fx:id="container" layoutX="55.0" layoutY="93.0" prefHeight="189.0" prefWidth="479.0" spacing="5.0">
+         <children>
+
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

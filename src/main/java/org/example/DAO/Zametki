@@ -1,0 +1,15 @@
+создание таблицы в мэйне
+
+IDaoFactory factory = DaoFactory.getInstance();
+        IISTablesDao isTablesDao = factory.getISTable();
+
+        ISTable newTable = new ISTable();
+
+        newTable.setTableName("Place5");
+
+        isTablesDao.createTable(newTable.getTableName());
+
+
+        container.getChildren().add(new RadioButton(istable.getTableName()));
+
+        b1.setToggleGroup(group);
