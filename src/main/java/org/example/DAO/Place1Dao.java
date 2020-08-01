@@ -105,7 +105,7 @@ public class Place1Dao implements IPlace1Dao{
 
     private Connection getConnection() {
         Connection connection = null;
-        String url = "jdbc:h2:file://home/j/IdeaProjects/niki.org/Rizniza/db/db";
+        String url = "jdbc:h2:file:/" + GetPath.path + "/db/db";
         String userName = "user";
         String pass = "password";
 
