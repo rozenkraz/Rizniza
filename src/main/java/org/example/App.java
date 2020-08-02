@@ -26,7 +26,7 @@ public class App extends Application {
         System.out.println("Привет");
 
         Item item = new Item();
-        item.setId(121);
+        item.setId(1210);
         item.setItemId("krest12");
         item.setSize("30x50");
         item.setPhoto("/dsfsadf/dsfasdfs.dfds");
