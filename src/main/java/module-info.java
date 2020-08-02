@@ -4,11 +4,11 @@ module org.example {
     requires java.sql;
     requires org.hibernate.orm.core;
     requires java.persistence;
+    requires java.naming;
 
-    opens org.example to javafx.fxml;
+    opens org.example;
     opens org.example.controllers to javafx.fxml;
-    opens org.example.entity to javafx.base;
-
+    opens org.example.entity;
 
     exports org.example;
 }

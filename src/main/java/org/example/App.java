@@ -5,6 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.entity.Item;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -19,6 +23,28 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        System.out.println("Привет");
+
+        Item item = new Item();
+        item.setId(121);
+        item.setItemId("krest12");
+        item.setSize("30x50");
+        item.setPhoto("/dsfsadf/dsfasdfs.dfds");
+        item.setDescription("It is very хорошее");
+        item.setCurrentPlace("Ризница");
+        item.setShellNumber("Номер 1 шкаф");
+        item.setName("Крест серебрянный");
+
+        SessionFactory factory = new Configuration()
+                .configure()
+                .buildSessionFactory();
+
+        Session session = factory.openSession();
+
+        session.beginTransaction();
+        session.save(item);
+        session.getTransaction().commit();
+        session.close();
 
 
 
@@ -39,6 +65,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
+
 
 
 

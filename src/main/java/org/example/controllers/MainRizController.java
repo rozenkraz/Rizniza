@@ -2,6 +2,10 @@ package org.example.controllers;
 
 import javafx.fxml.FXML;
 import org.example.App;
+import org.example.entity.Item;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import java.io.IOException;
 
@@ -9,6 +13,9 @@ public class MainRizController {
 
     @FXML
     public void toAdd1() throws IOException {
+
+
+
         App.setRoot("controllers/add1/add1_b");
     }
 
