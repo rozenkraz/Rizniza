@@ -6,7 +6,7 @@ import org.example.entity.Place1Item;
 import java.util.List;
 
 public interface IPlaceDao {
-    Place addPlace();
+    Place addPlace(String tableName);
     void deletePlace();
     List<Place> getAll();
 }

@@ -24,9 +24,9 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         System.out.println("Привет");
-
+/*
         Item item = new Item();
-        item.setId(1213301);
+        item.setId(12132300);
         item.setItemId("krest12");
         item.setSize("30x50");
         item.setPhoto("/dsfsadf/dsfasdfs.dfds");
@@ -38,7 +38,7 @@ public class App extends Application {
         SessionControl sc = new SessionControl();
         Session session = sc.startSession();
         session.save(item);
-        sc.closeSession(session);
+        sc.closeSession(session);*/
 
 
 

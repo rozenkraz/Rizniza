@@ -7,9 +7,14 @@ import java.util.List;
 
 public class PlaceDao implements IPlaceDao{
     @Override
-    public Place addPlace() {
+    public Place addPlace(String placeName) {
         SessionControl sc = new SessionControl();
         Session session = sc.startSession();
+
+        Place place = new Place();
+        place.setName(placeName);
+
+        session.save(place);
 
         sc.closeSession(session);
         return null;
