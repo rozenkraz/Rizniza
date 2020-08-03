@@ -12,7 +12,7 @@ public class Item {
     private String size;
     private String photo;
     private String description;
-
+    private String type;
     private String currentPlace;
     private String shellNumber;
     private String name;
@@ -80,4 +80,13 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }

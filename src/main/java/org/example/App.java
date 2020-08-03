@@ -24,6 +24,8 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         System.out.println("Привет");
+        SessionControl sc = new SessionControl();
+        Session session = sc.startSession();
 /*
         Item item = new Item();
         item.setId(12132300);
@@ -35,10 +37,7 @@ public class App extends Application {
         item.setShellNumber("Номер 1 шкаф");
         item.setName("Крест серебрянный");
 
-        SessionControl sc = new SessionControl();
-        Session session = sc.startSession();
-        session.save(item);
-        sc.closeSession(session);*/
+       */
 
 
 
@@ -59,9 +58,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) throws SQLException {
-
-
-
 
         launch();
     }

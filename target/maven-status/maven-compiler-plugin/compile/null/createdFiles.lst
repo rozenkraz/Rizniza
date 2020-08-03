@@ -16,6 +16,7 @@ org\example\DAO\hibernate\ISessionControl.class
 org\example\controllers\Add1Controller.class
 org\example\controllers\Add1AddedController.class
 org\example\DAO\hibernate\SessionControl.class
+org\example\entity\Test.class
 org\example\entity\Type.class
 org\example\controllers\MainRizController.class
 org\example\DAO\hibernate\TypeDao.class

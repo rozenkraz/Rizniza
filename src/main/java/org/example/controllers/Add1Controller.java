@@ -9,7 +9,10 @@ import org.example.App;
 import org.example.DAO.Base.DaoFactory;
 import org.example.DAO.Base.IDaoFactory;
 import org.example.DAO.Base.IISTablesDao;
+import org.example.DAO.hibernate.IPlaceDao;
+import org.example.DAO.hibernate.PlaceDao;
 import org.example.entity.ISTable;
+import org.example.entity.Place;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -18,9 +21,9 @@ import java.util.List;
 
 public class Add1Controller {
 
-    private List<ISTable> tableList;
+    private List<Place> tableList;
 
-    private ISTable table1;
+    private Place table1;
 
     public static String getTableName() {
         return tableName;
@@ -33,24 +36,22 @@ public class Add1Controller {
 
 
     public void initialize() throws ParserConfigurationException, IOException, SAXException {
-        IDaoFactory factory = DaoFactory.getInstance();
-        IISTablesDao isTablesDao = factory.getISTable();
+        IPlaceDao placeDao = new PlaceDao();
 
-        ISTable newTable = new ISTable();
 
-        tableList = isTablesDao.getAllPLaces();
+        tableList = placeDao.getAll();
 
         table1 = tableList.get(0);
-        tableName = table1.getTableName().substring(5);
+        tableName = table1.getName();
 
         ToggleGroup group = new ToggleGroup();
 
 
-        for (ISTable istable : tableList) {
-            RadioButton radioButton = new RadioButton(istable.getTableName().substring(5));
+        for (Place place : tableList) {
+            RadioButton radioButton = new RadioButton(place.getName());
             radioButton.setToggleGroup(group);
             radioButton.setOnAction(e -> {
-                tableName = istable.getTableName().substring(5);
+                tableName = place.getName();
             });
             ;
 

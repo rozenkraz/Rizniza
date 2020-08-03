@@ -8,7 +8,7 @@ import org.example.App;
 import java.io.IOException;
 
 public class CreatePlaceTableCreatedController {
-    @FXML
+
     private String name= CreatePlaceTableController.getTableCreatedName();
 
     @FXML

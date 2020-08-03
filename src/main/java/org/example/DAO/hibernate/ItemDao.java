@@ -7,9 +7,11 @@ import java.util.List;
 
 public class ItemDao implements IItemDao{
     @Override
-    public Item addItem() {
+    public Item addItem(Item item) {
         SessionControl sc = new SessionControl();
         Session session = sc.startSession();
+
+        session.save(item);
 
         sc.closeSession(session);
         return null;
