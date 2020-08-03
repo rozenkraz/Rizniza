@@ -51,7 +51,7 @@ public class ShowGroupCompleteController {
         chosenTable = ShowGroupChooseTableController.getTableName();
         label.setText("Список таблицы " + chosenTable + " готов!");
 
-        IDaoFactory factory = DaoFactory.getInstance();
+        /*IDaoFactory factory = DaoFactory.getInstance();
         IItemCollection1Dao itemFromCollection1= factory.getItemFromCollection1();
 
         listItems = itemFromCollection1.getAll(chosenTable);
@@ -90,7 +90,7 @@ public class ShowGroupCompleteController {
         }catch(Exception e){
             e.getMessage();
         }
-
+*/
     }
 
 

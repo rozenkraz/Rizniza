@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="449.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controllers.Add1FieldsController">
+   <children>
+      <Button layoutX="498.0" layoutY="391.0" mnemonicParsing="false" onAction="#toAdd1Added" text="Далее" />
+      <Button layoutX="247.0" layoutY="391.0" mnemonicParsing="false" onAction="#toMainRiz" text="Главное меню" />
+      <Button layoutX="41.0" layoutY="391.0" mnemonicParsing="false" onAction="#toAdd1" text="Назад" />
+      <Label layoutX="222.0" layoutY="31.0" text="Название таблицы" />
+      <VBox layoutX="154.0" layoutY="84.0" prefHeight="294.0" prefWidth="370.0" spacing="10.0">
+         <children>
+            <TextField prefHeight="11.0" prefWidth="370.0" />
+            <TextField layoutX="10.0" layoutY="10.0" prefHeight="11.0" prefWidth="370.0" />
+            <TextField layoutX="10.0" layoutY="45.0" prefHeight="11.0" prefWidth="370.0" />
+            <TextField layoutX="10.0" layoutY="10.0" prefHeight="11.0" prefWidth="370.0" />
+            <TextField layoutX="10.0" layoutY="80.0" prefHeight="11.0" prefWidth="370.0" />
+            <TextField layoutX="10.0" layoutY="115.0" prefHeight="11.0" prefWidth="370.0" />
+            <TextArea prefHeight="65.0" prefWidth="370.0" />
+         </children>
+      </VBox>
+      <VBox layoutX="14.0" layoutY="84.0" prefHeight="244.0" prefWidth="137.0" spacing="17.0">
+         <children>
+            <Label prefHeight="26.0" prefWidth="107.0" text="Название" />
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="123.0" text="Ключ в каталоге" />
+            <Label layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="107.0" text="Размер" />
+            <Label layoutX="10.0" layoutY="36.0" prefHeight="26.0" prefWidth="107.0" text="Адрес фото" />
+            <Label layoutX="10.0" layoutY="88.0" prefHeight="26.0" prefWidth="107.0" text="Расположение" />
+            <Label layoutX="10.0" layoutY="62.0" prefHeight="26.0" prefWidth="107.0" text="Точное место" />
+            <Label prefHeight="36.0" prefWidth="117.0" text="Описание" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

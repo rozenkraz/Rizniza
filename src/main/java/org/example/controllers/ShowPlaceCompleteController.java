@@ -39,7 +39,7 @@ public class ShowPlaceCompleteController {
         chosenTable = ShowPlaceChoosePlaceController.getTableName();
         label.setText("Список таблицы " + chosenTable + " готов!");
 
-        IDaoFactory factory = DaoFactory.getInstance();
+        /*IDaoFactory factory = DaoFactory.getInstance();
         IPlace1Dao itemFromPlace1= factory.getPlace1();
 
         listItems = itemFromPlace1.getAll(chosenTable);
@@ -71,7 +71,7 @@ public class ShowPlaceCompleteController {
         }catch(Exception e){
             e.getMessage();
         }
-
+*/
     }
 
 

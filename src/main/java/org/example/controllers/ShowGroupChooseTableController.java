@@ -10,7 +10,12 @@ import org.example.App;
 import org.example.DAO.Base.DaoFactory;
 import org.example.DAO.Base.IDaoFactory;
 import org.example.DAO.Base.IISTablesDao;
+import org.example.DAO.hibernate.IPlaceDao;
+import org.example.DAO.hibernate.ITypeDao;
+import org.example.DAO.hibernate.PlaceDao;
+import org.example.DAO.hibernate.TypeDao;
 import org.example.entity.ISTable;
+import org.example.entity.Type;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,7 +24,7 @@ import java.util.List;
 
 public class ShowGroupChooseTableController {
 
-    private List<ISTable> tableList;
+    private List<Type> tableList;
 
     public static String getTableName() {
         return tableName;
@@ -28,7 +33,7 @@ public class ShowGroupChooseTableController {
     private static String tableName;
 
 
-    private ISTable table1;
+    private Type table1;
 
     @FXML
     VBox container;
@@ -58,25 +63,21 @@ public class ShowGroupChooseTableController {
     }
 
     public void initialize() throws ParserConfigurationException, IOException, SAXException {
-        IDaoFactory factory = DaoFactory.getInstance();
-        IISTablesDao isTablesDao = factory.getISTable();
+        ITypeDao typeDao = new TypeDao();
 
-        ISTable newTable = new ISTable();
-
-        tableList = isTablesDao.getAllItemCollections();
+        tableList = typeDao.getAll();
 
         table1= tableList.get(0);
-        tableName = table1.getTableName().substring(14);
 
         ToggleGroup group = new ToggleGroup();
 
 
 
-        for (ISTable istable : tableList) {
-            RadioButton radioButton = new RadioButton(istable.getTableName().substring(14));
+        for (Type type : tableList) {
+            RadioButton radioButton = new RadioButton(type.getName());
             radioButton.setToggleGroup(group);
             radioButton.setOnAction(e -> {
-                tableName = istable.getTableName().substring(14);
+                tableName = type.getName();
             });;
 
             container.getChildren().add(radioButton);

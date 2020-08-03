@@ -50,7 +50,7 @@ public class CreatePlaceTableController {
         if((tableCreatedName != "") && (tableCreatedName.length() < 230)) {
             //newTable.setTableName(tableCreatedName);
             PlaceDao placeDao = new PlaceDao();
-            placeDao.addPlace(tableCreatedName, 2);
+            placeDao.addPlace(tableCreatedName);
 
             //isTablesDao.createPlaceTable(newTable.getTableName());
         }

@@ -2,7 +2,11 @@ package org.example.DAO.hibernate;
 
 import org.example.entity.Place;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class PlaceDao implements IPlaceDao{
@@ -34,7 +38,16 @@ public class PlaceDao implements IPlaceDao{
         SessionControl sc = new SessionControl();
         Session session = sc.startSession();
 
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Place> cq = cb.createQuery(Place.class);
+        Root<Place> root = cq.from(Place.class);
+        cq.select(root);
+
+        Query query = session.createQuery(cq);
+
+        List<Place> placeList = query.getResultList();
+
         sc.closeSession(session);
-        return null;
+        return placeList;
     }
 }
