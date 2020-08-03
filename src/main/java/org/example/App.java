@@ -5,10 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.DAO.hibernate.ISessionControl;
+import org.example.DAO.hibernate.SessionControl;
 import org.example.entity.Item;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -26,7 +26,7 @@ public class App extends Application {
         System.out.println("Привет");
 
         Item item = new Item();
-        item.setId(12101);
+        item.setId(1213301);
         item.setItemId("krest12");
         item.setSize("30x50");
         item.setPhoto("/dsfsadf/dsfasdfs.dfds");
@@ -35,16 +35,10 @@ public class App extends Application {
         item.setShellNumber("Номер 1 шкаф");
         item.setName("Крест серебрянный");
 
-        SessionFactory factory = new Configuration()
-                .configure()
-                .buildSessionFactory();
-
-        Session session = factory.openSession();
-
-        session.beginTransaction();
+        SessionControl sc = new SessionControl();
+        Session session = sc.startSession();
         session.save(item);
-        session.getTransaction().commit();
-        session.close();
+        sc.closeSession(session);
 
 
 

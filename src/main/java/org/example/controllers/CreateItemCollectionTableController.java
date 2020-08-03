@@ -4,9 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import org.example.App;
-import org.example.DAO.DaoFactory;
-import org.example.DAO.IDaoFactory;
-import org.example.DAO.IISTablesDao;
+import org.example.DAO.Base.DaoFactory;
+import org.example.DAO.Base.IDaoFactory;
+import org.example.DAO.Base.IISTablesDao;
 import org.example.entity.ISTable;
 
 import java.io.IOException;

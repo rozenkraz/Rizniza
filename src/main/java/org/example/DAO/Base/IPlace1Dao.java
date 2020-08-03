@@ -1,4 +1,4 @@
-package org.example.DAO;
+package org.example.DAO.Base;
 
 import org.example.entity.Item;
 import org.example.entity.Place1Item;

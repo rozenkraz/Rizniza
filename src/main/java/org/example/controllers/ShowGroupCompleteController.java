@@ -10,9 +10,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.StackPane;
 import org.example.App;
-import org.example.DAO.DaoFactory;
-import org.example.DAO.IDaoFactory;
-import org.example.DAO.IItemCollection1Dao;
+import org.example.DAO.Base.DaoFactory;
+import org.example.DAO.Base.IDaoFactory;
+import org.example.DAO.Base.IItemCollection1Dao;
 import org.example.entity.ItemFromCollection1;
 import org.xml.sax.SAXException;
 

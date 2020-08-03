@@ -24,6 +24,8 @@
         <property name="hibernate.connection.useUnicode">true</property>
 
         <mapping class="org.example.entity.Item" />
+        <mapping class="org.example.entity.Place" />
+        <mapping class="org.example.entity.Type" />
 
     </session-factory>
 </hibernate-configuration>
