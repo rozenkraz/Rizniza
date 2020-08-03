@@ -5,7 +5,7 @@ import org.example.entity.Type;
 import java.util.List;
 
 public interface ITypeDao {
-    Type addPlace();
-    void deletePlace();
+    Type addType(String typeName);
+    void deleteType();
     List<Type> getAll();
 }

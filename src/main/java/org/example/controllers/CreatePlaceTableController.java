@@ -40,6 +40,7 @@ public class CreatePlaceTableController {
 
 
         tableCreatedName = createTableName.getText();
+        //tableCreatedName = tableCreatedName.replace(" ", "_");
         //System.out.println(tableCreatedName);
 
         //IDaoFactory factory = DaoFactory.getInstance();
@@ -49,7 +50,7 @@ public class CreatePlaceTableController {
         if((tableCreatedName != "") && (tableCreatedName.length() < 230)) {
             //newTable.setTableName(tableCreatedName);
             PlaceDao placeDao = new PlaceDao();
-            placeDao.addPlace(tableCreatedName);
+            placeDao.addPlace(tableCreatedName, 2);
 
             //isTablesDao.createPlaceTable(newTable.getTableName());
         }
