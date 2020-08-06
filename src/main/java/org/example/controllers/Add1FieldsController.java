@@ -25,11 +25,22 @@ public class Add1FieldsController {
 
     private List<Type> tableList;
 
-    private static Item itemToSend;
 
     public static Item getItemToSend() {
         return itemToSend;
     }
+
+    private static Item itemToSend;
+
+
+    public static String getItemIdToSend() {
+        return itemIdToSend;
+    }
+
+    @FXML
+    private static String itemIdToSend;
+
+
 
     @FXML
     Label labelTableName;
@@ -58,6 +69,9 @@ public class Add1FieldsController {
     @FXML
     TextArea fieldDescription;
 
+    @FXML
+    ChoiceBox<String> typeContainer;
+
     String placeName = Add1Controller.getTableName();
 
     public void initialize() throws ParserConfigurationException, IOException, SAXException {
@@ -81,26 +95,14 @@ public class Add1FieldsController {
 
 
         ObservableList<String> types = FXCollections.observableArrayList(typeNames);
-        ChoiceBox<String> typeContainer = new ChoiceBox<String>(types);
+        typeContainer = new ChoiceBox<String>(types);
         typeContainer.setValue(typeNames[0]);
         vbox2.getChildren().add(typeContainer);
 
-        typeContainer.setOnAction(event -> itemToSend.setType(typeContainer.getValue()));
-        //-------------------------------------------------------------------
-
-        //------------Setting Listeners for textFields-------------------------
-
-        fieldItemId.setOnAction(event -> itemToSend.setItemId(fieldItemId.getText()));
-        fieldName.setOnAction(event -> itemToSend.setName(fieldName.getText()));
-        fieldPhoto.setOnAction(event -> itemToSend.setPhoto(fieldPhoto.getText()));
-        //itemToSend.setCurrentPlace(placeName);
-        fieldShelf.setOnAction(event -> itemToSend.setShellNumber(fieldShelf.getText()));
-        fieldSize.setOnAction(event -> itemToSend.setSize(fieldSize.getText()));
-        fieldDescription.setOnKeyTyped(event -> itemToSend.setDescription(fieldDescription.getText()));
-
-
 
         //-------------------------------------------------------------------
+
+
 
 
     }
@@ -116,6 +118,23 @@ public class Add1FieldsController {
 
     @FXML
     public void toAdd1Added() throws IOException {
+        //------------Setting Listeners for textFields-------------------------
+        itemToSend = new Item();
+
+        itemToSend.setItemId(fieldItemId.getText());
+       itemToSend.setName(fieldName.getText());
+       itemToSend.setPhoto(fieldPhoto.getText());
+
+        itemToSend.setType(typeContainer.getValue());
+        itemToSend.setCurrentPlace(placeName);
+
+        itemToSend.setShellNumber(fieldShelf.getText());
+        itemToSend.setSize(fieldSize.getText());
+        itemToSend.setDescription(fieldDescription.getText());
+
+
+
+        //-------------------------------------------------------------------
         App.setRoot("controllers/add1/add1Added");
     }
 

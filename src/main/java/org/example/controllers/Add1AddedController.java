@@ -13,9 +13,14 @@ import java.io.IOException;
 
 public class Add1AddedController {
 
+    @FXML
     Item item = Add1FieldsController.getItemToSend();
 
+    @FXML
+    String itemId = Add1FieldsController.getItemIdToSend();
+
     public void initialize() throws ParserConfigurationException, IOException, SAXException {
+       // System.out.println(item.toString());
         IItemDao itemDao = new ItemDao();
         itemDao.addItem(item);
 

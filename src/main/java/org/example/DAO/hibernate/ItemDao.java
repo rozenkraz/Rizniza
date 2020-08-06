@@ -26,7 +26,7 @@ public class ItemDao implements IItemDao{
     }
 
     @Override
-    public List<Item> getAll() {
+    public List<Item> getAllByPlace(String placeName) {
         SessionControl sc = new SessionControl();
         Session session = sc.startSession();
 

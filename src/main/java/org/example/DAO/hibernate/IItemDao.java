@@ -7,6 +7,6 @@ import java.util.List;
 public interface IItemDao {
     Item addItem(Item item);
     void deleteItem();
-    List<Item> getAll();
+    List<Item> getAllByPlace(String placeName);
     Item getItemByItemId();
 }

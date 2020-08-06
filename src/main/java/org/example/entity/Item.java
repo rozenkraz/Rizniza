@@ -89,4 +89,18 @@ public class Item {
         this.type = type;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", itemId='" + itemId + '\'' +
+                ", size='" + size + '\'' +
+                ", photo='" + photo + '\'' +
+                ", description='" + description + '\'' +
+                ", type='" + type + '\'' +
+                ", currentPlace='" + currentPlace + '\'' +
+                ", shellNumber='" + shellNumber + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
