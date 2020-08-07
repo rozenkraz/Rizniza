@@ -100,7 +100,6 @@ public class Add1FieldsController {
         vbox2.getChildren().add(typeContainer);
 
 
-        //-------------------------------------------------------------------
 
 
 

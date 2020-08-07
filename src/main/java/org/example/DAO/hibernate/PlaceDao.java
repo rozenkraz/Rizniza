@@ -34,7 +34,6 @@ public class PlaceDao implements IPlaceDao{
 
     @Override
     public List<Place> getAll() {
-        List<Place> listOfPlaces;
         SessionControl sc = new SessionControl();
         Session session = sc.startSession();
 

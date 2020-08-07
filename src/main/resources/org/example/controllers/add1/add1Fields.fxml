@@ -19,18 +19,16 @@
             <TextField fx:id="fieldItemId" layoutX="10.0" layoutY="10.0" prefHeight="11.0" prefWidth="370.0" />
             <TextField fx:id="fieldSize" layoutX="10.0" layoutY="45.0" prefHeight="11.0" prefWidth="370.0" />
             <TextField fx:id="fieldPhoto" layoutX="10.0" layoutY="10.0" prefHeight="11.0" prefWidth="370.0" />
-            <TextField fx:id="fieldPlace" layoutX="10.0" layoutY="80.0" prefHeight="11.0" prefWidth="370.0" />
             <TextField fx:id="fieldShelf" layoutX="10.0" layoutY="115.0" prefHeight="11.0" prefWidth="370.0" />
             <TextArea fx:id="fieldDescription" prefHeight="65.0" prefWidth="370.0" />
          </children>
       </VBox>
-      <VBox layoutX="14.0" layoutY="84.0" prefHeight="294.0" prefWidth="138.0" spacing="17.0">
+      <VBox layoutX="14.0" layoutY="84.0" prefHeight="294.0" prefWidth="138.0" spacing="11.0">
          <children>
             <Label prefHeight="26.0" prefWidth="107.0" text="Название" />
             <Label layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="123.0" text="Ключ в каталоге" />
             <Label layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="107.0" text="Размер" />
             <Label layoutX="10.0" layoutY="36.0" prefHeight="26.0" prefWidth="107.0" text="Адрес фото" />
-            <Label layoutX="10.0" layoutY="88.0" prefHeight="26.0" prefWidth="107.0" text="Расположение" />
             <Label layoutX="10.0" layoutY="62.0" prefHeight="26.0" prefWidth="107.0" text="Точное место" />
             <Label prefHeight="36.0" prefWidth="117.0" text="Описание" />
             <Label layoutX="10.0" layoutY="226.0" prefHeight="36.0" prefWidth="117.0" text="Вид предмета" />

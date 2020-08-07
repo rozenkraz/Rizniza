@@ -13,6 +13,11 @@ import org.example.App;
 import org.example.DAO.Base.DaoFactory;
 import org.example.DAO.Base.IDaoFactory;
 import org.example.DAO.Base.IPlace1Dao;
+import org.example.DAO.hibernate.IItemDao;
+import org.example.DAO.hibernate.IPlaceDao;
+import org.example.DAO.hibernate.ItemDao;
+import org.example.DAO.hibernate.PlaceDao;
+import org.example.entity.Item;
 import org.example.entity.Place1Item;
 import org.xml.sax.SAXException;
 
@@ -21,13 +26,13 @@ import java.io.IOException;
 import java.util.List;
 
 public class ShowPlaceCompleteController {
-    private List<Place1Item> listItems;
+    private List<Item> listItems;
 
     @FXML
     StackPane stackPane;
 
     @FXML
-    TableView<Place1Item> tableView;
+    TableView<Item> tableView;
 
     @FXML
     Label label;
@@ -39,31 +44,29 @@ public class ShowPlaceCompleteController {
         chosenTable = ShowPlaceChoosePlaceController.getTableName();
         label.setText("Список таблицы " + chosenTable + " готов!");
 
-        /*IDaoFactory factory = DaoFactory.getInstance();
-        IPlace1Dao itemFromPlace1= factory.getPlace1();
-
-        listItems = itemFromPlace1.getAll(chosenTable);
+        IItemDao itemDao = new ItemDao();
+        listItems = itemDao.getAllByPlace(chosenTable);
 
 
 
 
-        TableColumn<Place1Item, String> itemIdCol//
-                = new TableColumn<Place1Item, String>("Номер в каталоге");
+        TableColumn<Item, String> itemIdCol//
+                = new TableColumn<Item, String>("Номер в каталоге");
         itemIdCol.setCellValueFactory(new PropertyValueFactory<>("itemId"));
 
-        TableColumn<Place1Item, String> nameCol//
-                = new TableColumn<Place1Item, String>("Название");
+        TableColumn<Item, String> nameCol//
+                = new TableColumn<Item, String>("Название");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 
 
-        TableColumn<Place1Item, String> photoCol//
-                = new TableColumn<Place1Item, String>("Фотогрфия");
+        TableColumn<Item, String> photoCol//
+                = new TableColumn<Item, String>("Фотогрфия");
         photoCol.setCellValueFactory(new PropertyValueFactory<>("photo"));
 
 
 
         try {
-            ObservableList<Place1Item> list = FXCollections.observableArrayList(listItems);
+            ObservableList<Item> list = FXCollections.observableArrayList(listItems);
             tableView.setItems(list);
             tableView.getColumns().addAll(itemIdCol, nameCol, photoCol);
 
@@ -71,7 +74,6 @@ public class ShowPlaceCompleteController {
         }catch(Exception e){
             e.getMessage();
         }
-*/
     }
 
 

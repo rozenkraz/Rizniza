@@ -13,6 +13,9 @@ import org.example.App;
 import org.example.DAO.Base.DaoFactory;
 import org.example.DAO.Base.IDaoFactory;
 import org.example.DAO.Base.IItemCollection1Dao;
+import org.example.DAO.hibernate.IItemDao;
+import org.example.DAO.hibernate.ItemDao;
+import org.example.entity.Item;
 import org.example.entity.ItemFromCollection1;
 import org.xml.sax.SAXException;
 
@@ -22,7 +25,7 @@ import java.util.List;
 
 public class ShowGroupCompleteController {
 
-    private List<ItemFromCollection1> listItems;
+    private List<Item> listItems;
 
     @FXML
     Label label2;
@@ -31,7 +34,7 @@ public class ShowGroupCompleteController {
     StackPane stackPane;
 
     @FXML
-    TableView<ItemFromCollection1> tableView;
+    TableView<Item> tableView;
 
     @FXML
     Label label;
@@ -51,38 +54,36 @@ public class ShowGroupCompleteController {
         chosenTable = ShowGroupChooseTableController.getTableName();
         label.setText("Список таблицы " + chosenTable + " готов!");
 
-        /*IDaoFactory factory = DaoFactory.getInstance();
-        IItemCollection1Dao itemFromCollection1= factory.getItemFromCollection1();
+        IItemDao itemDao = new ItemDao();
 
-        listItems = itemFromCollection1.getAll(chosenTable);
+        listItems = itemDao.getAllByType(chosenTable);
 
-
-        TableColumn<ItemFromCollection1, String> photoCol//
-                = new TableColumn<ItemFromCollection1, String>("Фото");
+        TableColumn<Item, String> photoCol//
+                = new TableColumn<Item, String>("Фото");
         photoCol.setCellValueFactory(new PropertyValueFactory<>("photo"));
 
-        TableColumn<ItemFromCollection1, String> itemIdCol//
-                = new TableColumn<ItemFromCollection1, String>("Номер Каталога");
+        TableColumn<Item, String> itemIdCol//
+                = new TableColumn<Item, String>("Номер Каталога");
         itemIdCol.setCellValueFactory(new PropertyValueFactory<>("itemId"));
 
-        TableColumn<ItemFromCollection1, String> sizeCol//
-                = new TableColumn<ItemFromCollection1, String>("Размер");
+        TableColumn<Item, String> sizeCol//
+                = new TableColumn<Item, String>("Размер");
         sizeCol.setCellValueFactory(new PropertyValueFactory<>("size"));
 
-        TableColumn<ItemFromCollection1, String> descriptionCol//
-                = new TableColumn<ItemFromCollection1, String>("Описание");
+        TableColumn<Item, String> descriptionCol//
+                = new TableColumn<Item, String>("Описание");
         descriptionCol.setCellValueFactory(new PropertyValueFactory<>("description"));
 
-        TableColumn<ItemFromCollection1, String> placeCol//
-                = new TableColumn<ItemFromCollection1, String>("Текущее место");
+        TableColumn<Item, String> placeCol//
+                = new TableColumn<Item, String>("Текущее место");
         placeCol.setCellValueFactory(new PropertyValueFactory<>("currentPlace"));
 
-        TableColumn<ItemFromCollection1, String> nameCol//
-                = new TableColumn<ItemFromCollection1, String>("Название");
+        TableColumn<Item, String> nameCol//
+                = new TableColumn<Item, String>("Название");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         try {
-            ObservableList<ItemFromCollection1> list = FXCollections.observableArrayList(listItems);
+            ObservableList<Item> list = FXCollections.observableArrayList(listItems);
             tableView.setItems(list);
             tableView.getColumns().addAll(photoCol, itemIdCol, sizeCol, descriptionCol, placeCol, nameCol);
 
@@ -90,7 +91,7 @@ public class ShowGroupCompleteController {
         }catch(Exception e){
             e.getMessage();
         }
-*/
+
     }
 
 
