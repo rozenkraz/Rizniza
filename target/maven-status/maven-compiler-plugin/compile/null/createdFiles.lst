@@ -1,12 +1,15 @@
 org\example\controllers\CreatePlaceTableController.class
 org\example\DAO\hibernate\IItemDao.class
 org\example\controllers\MoveItemChooseTableController.class
+org\example\controllers\UpdateItemUpdateComplete.class
 org\example\controllers\CreateItemCollectionTableCreatedController.class
 org\example\App.class
 org\example\controllers\ShowGroupChooseTableController.class
 org\example\DAO\hibernate\IPlaceDao.class
+org\example\controllers\UpdateItemChooseItem.class
 org\example\DAO\Base\Place1Dao.class
 org\example\DAO\Base\IDaoFactory.class
+org\example\controllers\UpdateItemUpdateFields.class
 org\example\controllers\MoveItemChooseDistinationController.class
 org\example\controllers\MoveItemChooseItemController.class
 org\example\controllers\ShowPlaceChoosePlaceController.class
@@ -21,6 +24,7 @@ org\example\entity\Type.class
 org\example\controllers\MainRizController.class
 org\example\DAO\hibernate\TypeDao.class
 org\example\controllers\SecondaryController.class
+org\example\controllers\UpdateItemChoosePlace.class
 org\example\DAO\Base\IItemCollection1Dao.class
 module-info.class
 org\example\entity\Place.class

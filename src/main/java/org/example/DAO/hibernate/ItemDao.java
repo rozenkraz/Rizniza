@@ -80,14 +80,36 @@ public class ItemDao implements IItemDao{
     }
 
     @Override
-    public Item getItemByItemId() {
+    public List<Item> getItemByItemId(String itemId) {
         SessionControl sc = new SessionControl();
         Session session = sc.startSession();
 
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+        CriteriaQuery<Item> cq = cb.createQuery(Item.class);
+        Root<Item> root = cq.from(Item.class);
+
+        //Selection[] selections = {root.get("name"), root.get("photo")};
+
+        cq.select(root)
+                .where(cb.like(root.get("itemId"), itemId));
+
+        Query query = session.createQuery(cq);
+
+        List<Item> listOfItems = query.getResultList();
 
 
         sc.closeSession(session);
-        return null;
+        return listOfItems;
+    }
+
+    @Override
+    public void updateItem(Item item) {
+        SessionControl sc = new SessionControl();
+        Session session = sc.startSession();
+
+        session.update(item);
+
+        sc.closeSession(session);
     }
 
     @Override

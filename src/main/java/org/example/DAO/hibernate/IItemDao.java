@@ -10,7 +10,9 @@ public interface IItemDao {
     List<Item> getAllByPlace(String placeName);
 
     List<Item> getAllByType(String placeName);
-    Item getItemByItemId();
+    List<Item> getItemByItemId(String itemId);
+
+    void updateItem(Item item);
 
     void moveItemById(String itemId, String distination);
 }

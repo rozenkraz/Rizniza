@@ -42,4 +42,8 @@ public class MainRizController {
     public void toShowPlaceChoosePlace() throws IOException {
         App.setRoot("controllers/showPlace/showPlaceChoosePlace");
     }
+    @FXML
+    public void toUpdateItemChoosePlace() throws IOException {
+        App.setRoot("controllers/updateItem/updateItemChoosePlace");
+    }
 }

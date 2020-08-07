@@ -1,6 +1,7 @@
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\MainRizController.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\MoveItemComplete.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\DAO\Base\GetPath.java
+E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\UpdateItemUpdateComplete.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\CreateItemCollectionTableCreatedController.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\DAO\Base\ISTablesDao.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\module-info.java
@@ -16,8 +17,10 @@ E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\DAO\Base\IItemCollec
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\entity\Item.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\entity\ISTable.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\Add1AddedController.java
+E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\UpdateItemChooseItem.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\DAO\Base\IISTablesDao.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\DAO\hibernate\IPlaceDao.java
+E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\UpdateItemChoosePlace.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\CreatePlaceTableController.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\ShowGroupCompleteController.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\Add1FieldsController.java
@@ -25,6 +28,7 @@ E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\App.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\CreatePlaceTableCreatedController.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\DAO\hibernate\ITypeDao.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\DAO\hibernate\PlaceDao.java
+E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\UpdateItemUpdateFields.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\CreateItemCollectionTableController.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\controllers\ShowPlaceChoosePlaceController.java
 E:\workspace\IdeaProjects\Rizniza\src\main\java\org\example\entity\ItemFromCollection1.java

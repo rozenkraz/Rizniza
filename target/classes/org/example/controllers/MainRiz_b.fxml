@@ -36,6 +36,7 @@
              <Button mnemonicParsing="false" onMouseClicked="#toMoveItemChooseTable" prefHeight="84.0" prefWidth="276.0" text="Переместить предмет" />
             <Button mnemonicParsing="false" onAction="#toShowGroupChooseTable" prefHeight="91.0" prefWidth="279.0" text="Показать группу предметов" />
             <Button mnemonicParsing="false" onAction="#toShowPlaceChoosePlace" prefHeight="78.0" prefWidth="283.0" text="Просмотреть что есть в хранилище" />
+             <Button mnemonicParsing="false" onAction="#toUpdateItemChoosePlace" prefHeight="78.0" prefWidth="283.0" text="Редактировать предмет" />
 
          </children>
       </VBox>
