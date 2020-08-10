@@ -1,10 +1,13 @@
 package org.example.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import javax.persistence.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+@SuppressWarnings("ALL")
 @Entity
 public class Item {
 
@@ -19,6 +22,21 @@ public class Item {
     private String currentPlace;
     private String shellNumber;
     private String name;
+
+
+    public ImageView getImage() {
+        return image;
+    }
+
+    public void setImage(ImageView image) {
+        this.image = image;
+    }
+
+    @Transient
+    public ImageView image;
+
+
+
 
     public int getId() {
         return id;

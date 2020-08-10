@@ -1,8 +1,13 @@
 package org.example.entity;
 
+import java.io.FileNotFoundException;
+
 public class ItemFromCollection1 extends Item {
     private int id;
     private String name;
+
+    public ItemFromCollection1() throws FileNotFoundException {
+    }
 
     public String getName() {
         return name;

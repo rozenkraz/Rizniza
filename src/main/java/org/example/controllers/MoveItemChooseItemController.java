@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -19,6 +21,7 @@ import org.example.entity.Type;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -59,28 +62,44 @@ public class MoveItemChooseItemController {
         IItemDao itemDao = new ItemDao();
         listItems = itemDao.getAllByPlace(chosenTable);
 
+        for (Item item : listItems) {
+            System.out.println(item.getPhoto());
+            item.image = new ImageView(new Image(new FileInputStream(item.getPhoto())));
+            item.image.setFitHeight(150);
+            item.image.setPreserveRatio(true);
+        }
+
+
 
 
 
         TableColumn<Item, String> itemIdCol//
-                = new TableColumn<Item, String>("Номер в каталоге");
+                = new TableColumn<Item, String>("Номер Каталога");
         itemIdCol.setCellValueFactory(new PropertyValueFactory<>("itemId"));
+        itemIdCol.setStyle( "-fx-alignment: CENTER-LEFT;");
+
 
         TableColumn<Item, String> nameCol//
                 = new TableColumn<Item, String>("Название");
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-
+        nameCol.setStyle( "-fx-alignment: CENTER-LEFT;");
 
         TableColumn<Item, String> photoCol//
-                = new TableColumn<Item, String>("Фотогрфия");
+                = new TableColumn<Item, String>("Фото");
         photoCol.setCellValueFactory(new PropertyValueFactory<>("photo"));
+        photoCol.setStyle( "-fx-alignment: CENTER-LEFT;");
+
+        /* initialize and specify table column */
+        TableColumn<Item, ImageView> imgCol = new TableColumn<Item, ImageView>("Images");
+        imgCol.setCellValueFactory(new PropertyValueFactory<Item, ImageView>("image"));
+        imgCol.setStyle( "-fx-alignment: CENTER-LEFT;");
 
 
 
         try {
             ObservableList<Item> list = FXCollections.observableArrayList(listItems);
             tableView.setItems(list);
-            tableView.getColumns().addAll(itemIdCol, nameCol, photoCol);
+            tableView.getColumns().addAll(itemIdCol, nameCol, photoCol, imgCol);
 
 
         }catch(Exception e){

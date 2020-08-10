@@ -1,5 +1,7 @@
 package org.example.entity;
 
+import java.io.FileNotFoundException;
+
 public class Place1Item extends Item{
 
     private int id;
@@ -10,6 +12,9 @@ public class Place1Item extends Item{
     private String photo;
     private String itemId;
     private String shellNumber;
+
+    public Place1Item() throws FileNotFoundException {
+    }
 
     public String getPhoto() {
         return photo;

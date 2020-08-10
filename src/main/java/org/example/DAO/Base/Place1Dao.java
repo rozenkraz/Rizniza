@@ -3,13 +3,14 @@ package org.example.DAO.Base;
 import org.example.entity.Item;
 import org.example.entity.Place1Item;
 
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Place1Dao implements IPlace1Dao{
     @Override
-    public Place1Item add(int id, String itemId, String shellNumber) {
+    public Place1Item add(int id, String itemId, String shellNumber) throws FileNotFoundException {
         Place1Item item = new Place1Item();
         item.setId(id);
         item.setItemId(itemId);
@@ -94,7 +95,7 @@ public class Place1Dao implements IPlace1Dao{
             }
 
 
-        }catch (SQLException e){
+        }catch (SQLException | FileNotFoundException e){
             e.printStackTrace();
         }
 
